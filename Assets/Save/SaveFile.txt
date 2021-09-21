@@ -1,0 +1,23 @@
+﻿{
+    "nickname": "김현준",
+    "star": 15953,
+    "rocketList": [
+        {
+            "name": "기본 로켓",
+            "imageNumber": 1,
+            "amount": 33,
+            "price": 233196,
+            "ePs": 3
+        }
+    ],
+    "rocketMissileList": [
+        {
+            "name": "미사일 로켓",
+            "imageNumber": 1,
+            "amount": 18,
+            "price": 16577,
+            "ePs": 10
+        }
+    ],
+    "planetList": []
+}
