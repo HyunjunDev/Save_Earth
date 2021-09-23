@@ -21,6 +21,13 @@ public class UpgradePanel : MonoBehaviour
     {
         rocketMovement = GameObject.Find("Rocket_Normal").GetComponent<RocketMovement>();
     }
+    private void Update()
+    {
+        if (rocket.imageNumber == 1)
+        {
+            rocketMovement.ChangeSpaceshipSprtie();
+        }
+    }
     public void SetValue(Rocket rocket)
     {
         this.rocket = rocket;
@@ -29,11 +36,16 @@ public class UpgradePanel : MonoBehaviour
 
     public void RocketUpdateUI()
     {
+        upgradeLevel = rocket.amount;
         switch (upgradeLevel)
         {
             case 5:
-                rocketImage.sprite = rocketSprite[rocket.imageNumber++];
-                rocketMovement.ChangeRocketSprite();
+                if (rocket.imageNumber == 0)
+                {
+                    rocket.imageNumber++;
+                    rocketImage.sprite = rocketSprite[rocket.imageNumber];
+                    rocketMovement.ChangeRocketSprite();
+                }
                 break;
         }
         rocketImage.sprite = rocketSprite[rocket.imageNumber];
@@ -49,10 +61,9 @@ public class UpgradePanel : MonoBehaviour
         }
         GameManager.Instance.CurrentUser.star -= rocket.price;
         Rocket rocketInList = GameManager.Instance.CurrentUser.rocketList.Find((x) => x.name == rocket.name);
-        upgradeLevel++;
         rocketInList.amount++;
         rocketInList.price = (long)(rocketInList.price * 1.25f);
-        UIManager.touchStar += 2;
+        rocket.autoStar += 100;
         RocketUpdateUI();
         GameManager.Instance.uiManager.UpdateRocketPanel();
     }

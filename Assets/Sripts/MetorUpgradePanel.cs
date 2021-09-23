@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-
-public class PlanetUpgradePanel : MonoBehaviour
+public class MetorUpgradePanel : MonoBehaviour
 {
     [SerializeField]
     public Image planetImage = null;
@@ -15,14 +14,14 @@ public class PlanetUpgradePanel : MonoBehaviour
     public Sprite[] planetSprite = null;
     [SerializeField]
     private Button purchaseButton = null;
-    public static int planetUpgradeLevel = 0;
-    public static int planetTouchStar = 0;
+    public static int metorUpgradeLevel = 0;
+    public static int metorTouchStar = 0;
     private ImgaeChanger imgaeChanger;
     private Planet planet = null;
     private User user;
     private void Start()
     {
-        imgaeChanger = GameObject.Find("Earth").GetComponent<ImgaeChanger>();
+        imgaeChanger = GameObject.Find("Metor").GetComponent<ImgaeChanger>();
     }
     private void Update()
     {
@@ -38,11 +37,12 @@ public class PlanetUpgradePanel : MonoBehaviour
     }
     public void PlanetUpdateUI()
     {
-        planetUpgradeLevel = planet.amount;
-        switch (planetUpgradeLevel)
+        metorUpgradeLevel = planet.amount;
+        switch (metorUpgradeLevel)
         {
             case 5:
-                if(planet.imageNumber == 0)
+                metorUpgradeLevel = planet.amount;
+                if(planet.imageNumber==0)
                 {
                     planet.imageNumber++;
                     planetImage.sprite = planetSprite[planet.imageNumber];
@@ -57,16 +57,16 @@ public class PlanetUpgradePanel : MonoBehaviour
     }
     public void OnClickPurchase()
     {
-        planetTouchStar = User.touchStar;
+        metorTouchStar = User.touchStar;
         if (GameManager.Instance.CurrentUser.star < planet.price)
         {
             return;
         }
         GameManager.Instance.CurrentUser.star -= planet.price;
-        Planet planetInList = GameManager.Instance.CurrentUser.planetList.Find((x) => x.name == planet.name);
+        Planet planetInList = GameManager.Instance.CurrentUser.metorList.Find((x) => x.name == planet.name);
         planetInList.amount++;
         planetInList.price = (long)(planetInList.price * 1.25f);
-        planetTouchStar += 10;
+        metorTouchStar += 30;
         PlanetUpdateUI();
         GameManager.Instance.uiManager.UpdateRocketPanel();
     }

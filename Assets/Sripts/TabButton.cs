@@ -6,14 +6,14 @@ public class TabButton : MonoBehaviour
 {
     Image background;
     public Sprite idlemg;
-    public Sprite selectdlmg;
+    public Sprite selectedmg;
     private void Awake()
     {
         background = GetComponent<Image>();
     }
     public void Selected()
     {
-        background.sprite = selectdlmg;
+        background.sprite = selectedmg;
     }
     public void DeSelected()
     {

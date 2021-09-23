@@ -12,19 +12,23 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private MissileUpgradePanel missileUpgradePanel = null;
     [SerializeField]
+    private SpaceshipUpgradePanel spaceshipUpgradePanel = null;
+    [SerializeField]
     private PlanetUpgradePanel planetUpgradePanel = null;
     [SerializeField]
-    private PlanetUpgradePanel planetUpgradePanel2 = null;
+    private MetorUpgradePanel metorUpgradePanel = null;
     [SerializeField]
     private EffectText StarTextTemplate = null;
     [SerializeField]
     private GameObject star = null;
     private Vector2 mousePos;
-    public static int touchStar = 1;
+    private User user;
 
     private List<UpgradePanel> upgradePanelsList = new List<UpgradePanel>();
     private List<MissileUpgradePanel> missileUpgradePanels = new List<MissileUpgradePanel>();
+    private List<SpaceshipUpgradePanel> spaceshipUpgradePanels = new List<SpaceshipUpgradePanel>();
     private List<PlanetUpgradePanel> planetUpgradePanels = new List<PlanetUpgradePanel>();
+    private List<MetorUpgradePanel> metorUpgradePanels = new List<MetorUpgradePanel>();
     void Start()
     {
         star.SetActive(false);
@@ -45,7 +49,9 @@ public class UIManager : MonoBehaviour
         GameObject panel = null;
         UpgradePanel panelComponent = null;
         MissileUpgradePanel panelMComponent = null;
+        SpaceshipUpgradePanel panelSComponent = null;
         PlanetUpgradePanel panelPComponent = null;
+        MetorUpgradePanel panelMetorComponent = null;
         foreach (Rocket rocket in GameManager.Instance.CurrentUser.rocketList)
         {
             panel = Instantiate(upgradePanel.gameObject, upgradePanel.transform.parent);
@@ -62,6 +68,14 @@ public class UIManager : MonoBehaviour
             panel.SetActive(true);
             missileUpgradePanels.Add(panelMComponent);
         }
+        foreach (Rocket rocket in GameManager.Instance.CurrentUser.rocketSpaceshipList)
+        {
+            panel = Instantiate(spaceshipUpgradePanel.gameObject, spaceshipUpgradePanel.transform.parent);
+            panelSComponent = panel.GetComponent<SpaceshipUpgradePanel>();
+            panelSComponent.SetValue(rocket);
+            panel.SetActive(true);
+            spaceshipUpgradePanels.Add(panelSComponent);
+        }
         foreach (Planet planet in GameManager.Instance.CurrentUser.planetList)
         {
             panel = Instantiate(planetUpgradePanel.gameObject, planetUpgradePanel.transform.parent);
@@ -70,11 +84,19 @@ public class UIManager : MonoBehaviour
             panel.SetActive(true);
             planetUpgradePanels.Add(panelPComponent);
         }
+        foreach (Planet planet in GameManager.Instance.CurrentUser.metorList)
+        {
+            panel = Instantiate(metorUpgradePanel.gameObject, metorUpgradePanel.transform.parent);
+            panelMetorComponent = panel.GetComponent<MetorUpgradePanel>();
+            panelMetorComponent.SetValue(planet);
+            panel.SetActive(true);
+            metorUpgradePanels.Add(panelMetorComponent);
+        }
     }
 
     public void OnClickRocket()
     {
-        GameManager.Instance.CurrentUser.star += touchStar;
+        GameManager.Instance.CurrentUser.star += User.touchStar;
         EffectText newText = null;
         if (GameManager.Instance.Pool.childCount > 0)
         {
@@ -86,7 +108,7 @@ public class UIManager : MonoBehaviour
             newText = Instantiate(StarTextTemplate, GameManager.Instance.Pool.parent).GetComponent<EffectText>();
         }
         newText.gameObject.SetActive(true);
-        newText.Show(touchStar);
+        newText.Show(User.touchStar);
         UpdateRocketPanel();
     }
 

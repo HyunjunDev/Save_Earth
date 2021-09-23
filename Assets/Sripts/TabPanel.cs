@@ -13,7 +13,7 @@ public class TabPanel : MonoBehaviour
     }
     public void ClickTab(int id)
     {
-        for(int i = 0;i<contentsPanels.Count;i++)
+        for (int i = 0; i < contentsPanels.Count; i++)
         {
             if(i==id)
             {
@@ -26,5 +26,5 @@ public class TabPanel : MonoBehaviour
                 tabButtons[i].DeSelected();
             }
         }
-    }
+    }    
 }

@@ -7,4 +7,5 @@ public class Rocket
     public int amount;
     public long price;
     public long ePs;
+    public int autoStar;
 }

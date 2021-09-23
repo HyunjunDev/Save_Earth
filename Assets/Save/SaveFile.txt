@@ -1,23 +1,52 @@
 ﻿{
     "nickname": "김현준",
-    "star": 15953,
+    "star": 120,
     "rocketList": [
         {
             "name": "기본 로켓",
-            "imageNumber": 1,
-            "amount": 33,
-            "price": 233196,
-            "ePs": 3
+            "imageNumber": 0,
+            "amount": 0,
+            "price": 150,
+            "ePs": 3,
+            "autoStar": 1000
         }
     ],
     "rocketMissileList": [
         {
             "name": "미사일 로켓",
-            "imageNumber": 1,
-            "amount": 18,
-            "price": 16577,
-            "ePs": 10
+            "imageNumber": 0,
+            "amount": 0,
+            "price": 300,
+            "ePs": 10,
+            "autoStar": 5000
         }
     ],
-    "planetList": []
+    "rocketSpaceshipList": [
+        {
+            "name": "스페이스쉽 로켓",
+            "imageNumber": 0,
+            "amount": 0,
+            "price": 1000,
+            "ePs": 20,
+            "autoStar": 20000
+        }
+    ],
+    "planetList": [
+        {
+            "name": "지구",
+            "imageNumber": 0,
+            "amount": 0,
+            "price": 300,
+            "ePs": 3
+        }
+    ],
+    "metorList": [
+        {
+            "name": "운석",
+            "imageNumber": 0,
+            "amount": 0,
+            "price": 1000,
+            "ePs": 10
+        }
+    ]
 }

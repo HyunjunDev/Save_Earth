@@ -4,8 +4,8 @@ public class RocketMovement : MonoBehaviour
 {
     public Transform[] path;
     private Animator animator;
-    [SerializeField]
-    private EffectText StarTextTemplate = null;
+    private User user;
+    private Rocket rocket;
     void OnDrawGizmos()
     {
         iTween.DrawPath(path);
@@ -13,14 +13,14 @@ public class RocketMovement : MonoBehaviour
     public int rotateSpeed;
     [SerializeField]
     public Transform target;
-    public static int rocketStar = 333;
+    private MissileUpgradePanel missileUpgradePanel;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Metor")
         {
             animator.SetBool("IsExplosion", true);
-
-            Invoke("FAni", 0.8f);
+            GameManager.Instance.CurrentUser.star += MissileUpgradePanel.missileAutoStar;
+            Invoke("FAni", 0.5f);
         }
     }
     void Start()
@@ -34,22 +34,10 @@ public class RocketMovement : MonoBehaviour
     }
     public void ChangeRocketSprite()
     {
-        EffectText rocketText = null;
         switch (UpgradePanel.upgradeLevel)
         {
             case 5:
                 animator.SetBool("Rocket Ani2", true);
-                if (GameManager.Instance.Pool.childCount > 0)
-                {
-                    rocketText = GameManager.Instance.Pool.GetChild(0).GetComponent<EffectText>();
-                    rocketText.transform.SetParent(GameManager.Instance.Pool.parent);
-                }
-                else
-                {
-                    rocketText = Instantiate(StarTextTemplate, GameManager.Instance.Pool.parent).GetComponent<EffectText>();
-                }
-                rocketText.gameObject.SetActive(true);
-                rocketText.Show(rocketStar);
                 break;
         }
     }
@@ -58,6 +46,20 @@ public class RocketMovement : MonoBehaviour
         switch (MissileUpgradePanel.missileUpgradeLevel)
         {
             case 5:
+                animator.SetBool("Rocket Ani2", true);
+                break;
+        }
+    }
+    public void ChangeSpaceshipSprtie()
+    {
+        switch (SpaceshipUpgradePanel.spaceshipUpgradeLevel)
+        {
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+            case 10:
                 animator.SetBool("Rocket Ani2", true);
                 break;
         }
