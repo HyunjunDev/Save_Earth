@@ -23,6 +23,7 @@ public class UIManager : MonoBehaviour
     private GameObject star = null;
     private Vector2 mousePos;
     private User user;
+    private Planet planet;
 
     private List<UpgradePanel> upgradePanelsList = new List<UpgradePanel>();
     private List<MissileUpgradePanel> missileUpgradePanels = new List<MissileUpgradePanel>();
@@ -96,7 +97,8 @@ public class UIManager : MonoBehaviour
 
     public void OnClickRocket()
     {
-        GameManager.Instance.CurrentUser.star += User.touchStar;
+
+        GameManager.Instance.CurrentUser.star += PlanetUpgradePanel.planetTouchStar + MetorUpgradePanel.metorTouchStar;
         EffectText newText = null;
         if (GameManager.Instance.Pool.childCount > 0)
         {
@@ -108,7 +110,7 @@ public class UIManager : MonoBehaviour
             newText = Instantiate(StarTextTemplate, GameManager.Instance.Pool.parent).GetComponent<EffectText>();
         }
         newText.gameObject.SetActive(true);
-        newText.Show(User.touchStar);
+        newText.Show(PlanetUpgradePanel.planetTouchStar + MetorUpgradePanel.metorTouchStar);
         UpdateRocketPanel();
     }
 

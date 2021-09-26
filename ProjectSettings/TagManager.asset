@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Metor
+  - Rocket_Missile
+  - Rocket_Spaceship
+  - Rocket_Normal
   layers:
   - Default
   - TransparentFX

@@ -17,6 +17,7 @@ public class SpaceshipUpgradePanel : MonoBehaviour
     private Button purchaseButton = null;
     private RocketMovement rocketMovement;
     public static int spaceshipUpgradeLevel = 0;
+    public static int SpaceshipAutoStar = 100;
     private Rocket rocket = null;
     public void Start()
     {
@@ -27,7 +28,19 @@ public class SpaceshipUpgradePanel : MonoBehaviour
         if(rocket.imageNumber==1)
         {
             rocketMovement.ChangeSpaceshipSprtie();
-        }    
+        }
+        else if (rocket.imageNumber == 2)
+        {
+            rocketMovement.ChangeSpaceshipSprtie();
+        }
+        else if (rocket.imageNumber == 3)
+        {
+            rocketMovement.ChangeSpaceshipSprtie();
+        }
+        else if (rocket.imageNumber == 4)
+        {
+            rocketMovement.ChangeSpaceshipSprtie();
+        }
     }
     public void SetValue(Rocket rocketSpaceship)
     {
@@ -47,6 +60,30 @@ public class SpaceshipUpgradePanel : MonoBehaviour
                     rocketMovement.ChangeSpaceshipSprtie();
                 }
                 break;
+            case 21:
+                if (rocket.imageNumber == 1)
+                {
+                    rocket.imageNumber++;
+                    rocketSpaceshipImage.sprite = rocketspaceshipSprite[rocket.imageNumber];
+                    rocketMovement.ChangeSpaceshipSprtie();
+                }
+                break;
+            case 41:
+                if (rocket.imageNumber == 2)
+                {
+                    rocket.imageNumber++;
+                    rocketSpaceshipImage.sprite = rocketspaceshipSprite[rocket.imageNumber];
+                    rocketMovement.ChangeSpaceshipSprtie();
+                }
+                break;
+            case 61:
+                if (rocket.imageNumber == 3)
+                {
+                    rocket.imageNumber++;
+                    rocketSpaceshipImage.sprite = rocketspaceshipSprite[rocket.imageNumber];
+                    rocketMovement.ChangeSpaceshipSprtie();
+                }
+                break;
         }
         rocketSpaceshipImage.sprite = rocketspaceshipSprite[rocket.imageNumber];
         spaceshipNameText.text = rocket.name;
@@ -55,6 +92,7 @@ public class SpaceshipUpgradePanel : MonoBehaviour
     }
     public void OnClickPurchase()
     {
+        SpaceshipAutoStar = rocket.autoStar;
         if (GameManager.Instance.CurrentUser.star < rocket.price)
         {
             return;
@@ -63,7 +101,7 @@ public class SpaceshipUpgradePanel : MonoBehaviour
         Rocket rocketInList = GameManager.Instance.CurrentUser.rocketSpaceshipList.Find((x) => x.name == rocket.name);
         rocketInList.amount++;
         rocketInList.price = (long)(rocketInList.price * 1.25f);
-        rocket.autoStar += 1000;
+        rocket.autoStar += 100;
         SpaceshipUpdateUI();
         GameManager.Instance.uiManager.UpdateRocketPanel();
     }

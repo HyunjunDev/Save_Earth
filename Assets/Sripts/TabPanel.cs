@@ -7,6 +7,7 @@ public class TabPanel : MonoBehaviour
     public List<TabButton> tabButtons;
     public List<GameObject> contentsPanels;
     int selected = 0;
+    public GameObject planetPanel;
     private void Start()
     {
         ClickTab(selected);

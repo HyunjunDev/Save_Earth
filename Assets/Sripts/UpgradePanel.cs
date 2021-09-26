@@ -16,6 +16,7 @@ public class UpgradePanel : MonoBehaviour
     private Button purchaseButton = null;
     private RocketMovement rocketMovement;
     public static int upgradeLevel = 0;
+    public static int normalAutoStar = 30;
     private Rocket rocket = null;
     public void Start()
     {
@@ -25,7 +26,19 @@ public class UpgradePanel : MonoBehaviour
     {
         if (rocket.imageNumber == 1)
         {
-            rocketMovement.ChangeSpaceshipSprtie();
+            rocketMovement.ChangeRocketSprite();
+        }
+        else if (rocket.imageNumber == 2)
+        {
+            rocketMovement.ChangeRocketSprite();
+        }
+        else if (rocket.imageNumber == 3)
+        {
+            rocketMovement.ChangeRocketSprite();
+        }
+        else if (rocket.imageNumber == 4)
+        {
+            rocketMovement.ChangeRocketSprite();
         }
     }
     public void SetValue(Rocket rocket)
@@ -47,6 +60,30 @@ public class UpgradePanel : MonoBehaviour
                     rocketMovement.ChangeRocketSprite();
                 }
                 break;
+            case 21:
+                if (rocket.imageNumber == 1)
+                {
+                    rocket.imageNumber++;
+                    rocketImage.sprite = rocketSprite[rocket.imageNumber];
+                    rocketMovement.ChangeRocketSprite();
+                }
+                break;
+            case 41:
+                if (rocket.imageNumber == 2)
+                {
+                    rocket.imageNumber++;
+                    rocketImage.sprite = rocketSprite[rocket.imageNumber];
+                    rocketMovement.ChangeRocketSprite();
+                }
+                break;
+            case 61:
+                if (rocket.imageNumber == 3)
+                {
+                    rocket.imageNumber++;
+                    rocketImage.sprite = rocketSprite[rocket.imageNumber];
+                    rocketMovement.ChangeRocketSprite();
+                }
+                break;
         }
         rocketImage.sprite = rocketSprite[rocket.imageNumber];
         rocketNameText.text = rocket.name;
@@ -55,6 +92,7 @@ public class UpgradePanel : MonoBehaviour
     }
     public void OnClickPurchase()
     {
+        normalAutoStar = rocket.autoStar;
         if (GameManager.Instance.CurrentUser.star < rocket.price)
         {
             return;
@@ -63,7 +101,7 @@ public class UpgradePanel : MonoBehaviour
         Rocket rocketInList = GameManager.Instance.CurrentUser.rocketList.Find((x) => x.name == rocket.name);
         rocketInList.amount++;
         rocketInList.price = (long)(rocketInList.price * 1.25f);
-        rocket.autoStar += 100;
+        rocket.autoStar += 10;
         RocketUpdateUI();
         GameManager.Instance.uiManager.UpdateRocketPanel();
     }

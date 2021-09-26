@@ -17,7 +17,7 @@ public class MissileUpgradePanel : MonoBehaviour
     private Button purchaseButton = null;
     private RocketMovement rocketMovement;
     public static int missileUpgradeLevel = 0;
-    public static int missileAutoStar = 10;
+    public static int missileAutoStar = 30;
     private Rocket rocket = null;
     public void Start()
     {
@@ -27,7 +27,19 @@ public class MissileUpgradePanel : MonoBehaviour
     {
         if (rocket.imageNumber == 1)
         {
-            rocketMovement.ChangeSpaceshipSprtie();
+            rocketMovement.ChangeMissileSprtie();
+        }
+        else if (rocket.imageNumber == 2)
+        {
+            rocketMovement.ChangeMissileSprtie();
+        }
+        else if (rocket.imageNumber == 3)
+        {
+            rocketMovement.ChangeMissileSprtie();
+        }
+        else if (rocket.imageNumber == 4)
+        {
+            rocketMovement.ChangeMissileSprtie();
         }
     }
     public void SetValue(Rocket rocketMissile)
@@ -42,6 +54,30 @@ public class MissileUpgradePanel : MonoBehaviour
         {
             case 5:
                 if(rocket.imageNumber==0)
+                {
+                    rocket.imageNumber++;
+                    rocketMissileImage.sprite = rocketMissileSprite[rocket.imageNumber];
+                    rocketMovement.ChangeMissileSprtie();
+                }
+                break;
+            case 21:
+                if (rocket.imageNumber == 1)
+                {
+                    rocket.imageNumber++;
+                    rocketMissileImage.sprite = rocketMissileSprite[rocket.imageNumber];
+                    rocketMovement.ChangeMissileSprtie();
+                }
+                break;
+            case 41:
+                if (rocket.imageNumber == 2)
+                {
+                    rocket.imageNumber++;
+                    rocketMissileImage.sprite = rocketMissileSprite[rocket.imageNumber];
+                    rocketMovement.ChangeMissileSprtie();
+                }
+                break;
+            case 61:
+                if (rocket.imageNumber == 3)
                 {
                     rocket.imageNumber++;
                     rocketMissileImage.sprite = rocketMissileSprite[rocket.imageNumber];

@@ -5901,7 +5901,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1150328225}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &301485724
 MonoBehaviour:
@@ -6419,6 +6419,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1442619461}
   - {fileID: 911312689}
   - {fileID: 1295605169}
   - {fileID: 1716187357}
@@ -6525,7 +6526,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 485208423}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.44, y: 0.11, z: 0}
+  m_LocalPosition: {x: -2.08, y: -0.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 700282515}
@@ -6568,7 +6569,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 493616652}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.46, y: -0.93, z: 0}
+  m_LocalPosition: {x: 1.152, y: -0.106, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 700282515}
@@ -6984,7 +6985,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 557692149}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.86, y: -0.23000002, z: 0}
+  m_LocalPosition: {x: 1.207, y: 0.17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 700282515}
@@ -7821,7 +7822,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 144.78003, y: -45.914993}
+  m_AnchoredPosition: {x: 144.78, y: -45.915}
   m_SizeDelta: {x: 289.56, y: 91.83}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &863711249
@@ -7881,6 +7882,9 @@ MonoBehaviour:
   rocketSprite:
   - {fileID: -5500695318544046587, guid: ad09f6c743c273f42b753048cb2100ab, type: 3}
   - {fileID: -7311724874796956899, guid: c8a31bff47b4ab940a2b1890979bd413, type: 3}
+  - {fileID: -8957209186473046873, guid: 8133721876d237a458b169fb7de4f9f8, type: 3}
+  - {fileID: 5989568060501940120, guid: dc62ef60ee9dbf042a414c9f91400221, type: 3}
+  - {fileID: 4859028856252147271, guid: eb83226632e40fc4b94f4c237c1fadb0, type: 3}
   purchaseButton: {fileID: 59368071}
 --- !u!1 &906961741
 GameObject:
@@ -7986,11 +7990,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 911312688}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.86, y: -0.23, z: 0}
+  m_LocalPosition: {x: 1.213, y: -0.188, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 433044030}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &911312690
 MonoBehaviour:
@@ -8041,7 +8045,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -3.0000305}
+  m_AnchoredPosition: {x: 0, y: -5}
   m_SizeDelta: {x: 289.56, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &978316605
@@ -8192,6 +8196,9 @@ MonoBehaviour:
   rocketMissileSprite:
   - {fileID: 7050154606623250514, guid: 4259d376a4516a04283a984b2883e5b4, type: 3}
   - {fileID: -3822364656489812908, guid: 0adbbf4380fb609448a19c97d69ce3db, type: 3}
+  - {fileID: -1948154244180843628, guid: 8b2b94ddc33813445a0b9d7c2dace19b, type: 3}
+  - {fileID: 4109434551861106663, guid: f77156a6bb545214191f7ed716eef5ca, type: 3}
+  - {fileID: -4032234664639102240, guid: cfa139cdccd079943869e4c4f732277b, type: 3}
   purchaseButton: {fileID: 1727044987}
 --- !u!1 &1119037721
 GameObject:
@@ -13041,8 +13048,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 68.7, y: -69.3}
-  m_SizeDelta: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 93, y: -68}
+  m_SizeDelta: {x: 1.28, y: 1.28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1138806651
 MonoBehaviour:
@@ -13128,7 +13135,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1150328225}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1146923453
 MonoBehaviour:
@@ -13169,6 +13176,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1564691684}
   - {fileID: 1862650492}
   - {fileID: 301485723}
   - {fileID: 1146923452}
@@ -13191,7 +13199,7 @@ GameObject:
   - component: {fileID: 1152916484}
   m_Layer: 0
   m_Name: Rocket_Spaceship
-  m_TagString: Untagged
+  m_TagString: Rocket_Spaceship
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13438,6 +13446,7 @@ MonoBehaviour:
   contentsPanels:
   - {fileID: 2142368541}
   - {fileID: 978316603}
+  planetPanel: {fileID: 1664140164}
 --- !u!114 &1160704111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13853,7 +13862,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 433044030}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1295605170
 MonoBehaviour:
@@ -14285,7 +14294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   user:
     nickname: "\uAE40\uD604\uC900"
-    star: 0
+    star: 100000000000
     rocketList:
     - name: "\uAE30\uBCF8 \uB85C\uCF13"
       imageNumber: 0
@@ -14313,13 +14322,18 @@ MonoBehaviour:
       amount: 0
       price: 300
       ePs: 3
+      touchStar: 10
     metorList:
     - name: "\uC6B4\uC11D"
       imageNumber: 0
       amount: 0
       price: 1000
       ePs: 10
+      touchStar: 20
   textPool: {fileID: 21380590}
+  contentsPanels:
+  - {fileID: 2142368541}
+  - {fileID: 978316603}
 --- !u!4 &1386577213
 Transform:
   m_ObjectHideFlags: 0
@@ -14334,6 +14348,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1442619460
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1442619461}
+  - component: {fileID: 1442619462}
+  m_Layer: 0
+  m_Name: Point0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1442619461
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442619460}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.455, y: -0.048, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 433044030}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1442619462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442619460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec163d919139a6e40bf7bd4e4324976a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1459196745
 GameObject:
   m_ObjectHideFlags: 0
@@ -14658,7 +14715,7 @@ GameObject:
   - component: {fileID: 1502993820}
   m_Layer: 0
   m_Name: Rocket_Missile
-  m_TagString: Untagged
+  m_TagString: Rocket_Missile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14746,6 +14803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path:
+  - {fileID: 1564691684}
   - {fileID: 1862650492}
   - {fileID: 301485723}
   - {fileID: 1146923452}
@@ -14802,6 +14860,49 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1564691683
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1564691684}
+  - component: {fileID: 1564691685}
+  m_Layer: 0
+  m_Name: Point0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1564691684
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564691683}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.259, y: -0.364, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1150328225}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1564691685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564691683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec163d919139a6e40bf7bd4e4324976a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1575545799
 GameObject:
   m_ObjectHideFlags: 0
@@ -15069,7 +15170,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 144.78, y: -45.915}
+  m_AnchoredPosition: {x: 144.78, y: -45.91501}
   m_SizeDelta: {x: 289.56, y: 91.83}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1664140166
@@ -15162,7 +15263,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 433044030}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1716187358
 MonoBehaviour:
@@ -15492,11 +15593,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1862650491}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.86, y: -0.23000002, z: 0}
+  m_LocalPosition: {x: 1.381, y: 0.065, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1150328225}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1862650493
 MonoBehaviour:
@@ -15526,7 +15627,7 @@ GameObject:
   - component: {fileID: 1894456180}
   m_Layer: 0
   m_Name: Rocket_Normal
-  m_TagString: Untagged
+  m_TagString: Rocket_Normal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15539,7 +15640,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1894456178}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.93, y: 1.44, z: 0}
+  m_LocalPosition: {x: 1.07, y: 1.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1183596067}
@@ -15598,8 +15699,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.14344263, y: -0.029197335}
-  m_Size: {x: 1.2425957, y: 1.2425957}
+  m_Offset: {x: 0.0017297864, y: 0.061903775}
+  m_Size: {x: 0.95917, y: 0.95917}
   m_Direction: 0
 --- !u!114 &1894456183
 MonoBehaviour:
@@ -15614,10 +15715,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path:
+  - {fileID: 1442619461}
   - {fileID: 911312689}
   - {fileID: 1295605169}
   - {fileID: 1716187357}
-  rotateSpeed: 10
+  rotateSpeed: 13
   target: {fileID: 568048781}
 --- !u!212 &1894456184
 SpriteRenderer:
@@ -15801,8 +15903,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 44.681183}
-  m_SizeDelta: {x: 50.165, y: 43.11}
+  m_AnchoredPosition: {x: 46.91, y: 42}
+  m_SizeDelta: {x: 203.76, y: 43.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1962425440
 MonoBehaviour:
@@ -16272,7 +16374,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 18.58493}
+  m_AnchoredPosition: {x: 0, y: -4}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2142368543

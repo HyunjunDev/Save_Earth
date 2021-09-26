@@ -7,4 +7,5 @@ public class Planet
     public int amount;
     public long price;
     public long ePs;
+    public int touchStar;
 }

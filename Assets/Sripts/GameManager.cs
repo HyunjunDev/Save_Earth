@@ -13,7 +13,7 @@ public class GameManager : MonoSingleton<GameManager>
     private string SAVE_PATH = "";
     private readonly string SAVE_FILENAME = "/SaveFile.txt";
     public UIManager uiManager { get; private set; }
-
+    public List<GameObject> contentsPanels;
     public void EarnRocketPerSecond()
     {
         foreach (Rocket rocket in user.rocketList)

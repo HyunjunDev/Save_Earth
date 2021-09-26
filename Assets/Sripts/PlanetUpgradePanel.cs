@@ -16,7 +16,7 @@ public class PlanetUpgradePanel : MonoBehaviour
     [SerializeField]
     private Button purchaseButton = null;
     public static int planetUpgradeLevel = 0;
-    public static int planetTouchStar = 0;
+    public static int planetTouchStar = 1;
     private ImgaeChanger imgaeChanger;
     private Planet planet = null;
     private User user;
@@ -26,9 +26,22 @@ public class PlanetUpgradePanel : MonoBehaviour
     }
     private void Update()
     {
+        planetTouchStar = planet.touchStar;
         if (planet.imageNumber == 1)
         {
-            imgaeChanger.UpgradeImage();
+            imgaeChanger.EarthImage();
+        }
+        else if (planet.imageNumber == 2)
+        {
+            imgaeChanger.EarthImage();
+        }
+        else if (planet.imageNumber == 3)
+        {
+            imgaeChanger.EarthImage();
+        }
+        else if (planet.imageNumber == 4)
+        {
+            imgaeChanger.EarthImage();
         }
     }
     public void SetValue(Planet planet)
@@ -46,7 +59,31 @@ public class PlanetUpgradePanel : MonoBehaviour
                 {
                     planet.imageNumber++;
                     planetImage.sprite = planetSprite[planet.imageNumber];
-                    imgaeChanger.UpgradeImage();
+                    imgaeChanger.EarthUpgradeImage();
+                }
+                break;
+            case 21:
+                if (planet.imageNumber == 1)
+                {
+                    planet.imageNumber++;
+                    planetImage.sprite = planetSprite[planet.imageNumber];
+                    imgaeChanger.EarthUpgradeImage();
+                }
+                break;
+            case 41:
+                if (planet.imageNumber == 2)
+                {
+                    planet.imageNumber++;
+                    planetImage.sprite = planetSprite[planet.imageNumber];
+                    imgaeChanger.EarthUpgradeImage();
+                }
+                break;
+            case 61:
+                if (planet.imageNumber == 3)
+                {
+                    planet.imageNumber++;
+                    planetImage.sprite = planetSprite[planet.imageNumber];
+                    imgaeChanger.EarthUpgradeImage();
                 }
                 break;
         }
@@ -57,7 +94,7 @@ public class PlanetUpgradePanel : MonoBehaviour
     }
     public void OnClickPurchase()
     {
-        planetTouchStar = User.touchStar;
+        planetTouchStar = planet.touchStar;
         if (GameManager.Instance.CurrentUser.star < planet.price)
         {
             return;
@@ -66,7 +103,7 @@ public class PlanetUpgradePanel : MonoBehaviour
         Planet planetInList = GameManager.Instance.CurrentUser.planetList.Find((x) => x.name == planet.name);
         planetInList.amount++;
         planetInList.price = (long)(planetInList.price * 1.25f);
-        planetTouchStar += 10;
+        planet.touchStar += 10;
         PlanetUpdateUI();
         GameManager.Instance.uiManager.UpdateRocketPanel();
     }

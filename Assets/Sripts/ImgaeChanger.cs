@@ -11,7 +11,8 @@ public class ImgaeChanger : MonoBehaviour
     private Sprite[] sprites;
     private MetorUpgradePanel metorUpgradePanel;
     private PlanetUpgradePanel planetUpgradePanel;
-    private int index;
+    private int eIndex;
+    private int mIndex;
 
     private void Start()
     {
@@ -19,31 +20,103 @@ public class ImgaeChanger : MonoBehaviour
         metorUpgradePanel = GameObject.Find("Metor").GetComponent<MetorUpgradePanel>();
         planetUpgradePanel = GameObject.Find("Earth").GetComponent<PlanetUpgradePanel>();
     }
+    public void EarthImage()
+    {
+        if (eIndex == 1)
+        {
+            image.sprite = sprites[eIndex];
+        }
+        else if (eIndex == 2)
+        {
+            image.sprite = sprites[eIndex];
+        }
+        else if (eIndex == 3)
+        {
+            image.sprite = sprites[eIndex];
+        }
+        else if (eIndex == 4)
+        {
+            image.sprite = sprites[eIndex];
+        }
+        else if (eIndex == 5)
+        {
+            image.sprite = sprites[eIndex];
+        }
+    }
+    public void EarthUpgradeImage()
+    {
+        switch (PlanetUpgradePanel.planetUpgradeLevel)
+        {
+            case 5:
+                if (eIndex == 0)
+                {
+                    image.sprite = sprites[eIndex];
+                    eIndex++;
+                }
+                break;
+            case 21:
+                if (eIndex == 1)
+                {
+                    image.sprite = sprites[eIndex];
+                    eIndex++;
+                }
+                break;
+            case 41:
+                if (eIndex == 2)
+                {
+                    image.sprite = sprites[eIndex];
+                    eIndex++;
+                }
+                break;
+            case 61:
+                if (eIndex == 3)
+                {
+                    image.sprite = sprites[eIndex];
+                    eIndex++;
+                }
+                break;
+        }
+        if (sprites.Length == eIndex)
+        {
+            eIndex = 0;
+        }
+    }
     public void UpgradeImage()
     {
         switch(MetorUpgradePanel.metorUpgradeLevel)
         {
             case 5:
-                if(index==0)
+                if (mIndex == 0)
                 {
-                    image.sprite = sprites[index];
-                    index++;
-                }    
+                    image.sprite = sprites[mIndex];
+                    mIndex++;
+                }
                 break;
-        }
-        switch(PlanetUpgradePanel.planetUpgradeLevel)
-        {
-            case 5:
-                if (index == 0)
+            case 21:
+                if (mIndex == 1)
                 {
-                    image.sprite = sprites[index];
-                    index++;
+                    image.sprite = sprites[mIndex];
+                    mIndex++;
+                }
+                break;
+            case 41:
+                if (mIndex == 2)
+                {
+                    image.sprite = sprites[mIndex];
+                    mIndex++;
+                }
+                break;
+            case 61:
+                if (mIndex == 3)
+                {
+                    image.sprite = sprites[mIndex];
+                    mIndex++;
                 }
                 break;
         }    
-            if (sprites.Length == index)
+            if (sprites.Length == mIndex)
             {
-                index = 0;
+                mIndex = 0;
             }
     }    
 }

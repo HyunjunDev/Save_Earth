@@ -15,7 +15,7 @@ public class MetorUpgradePanel : MonoBehaviour
     [SerializeField]
     private Button purchaseButton = null;
     public static int metorUpgradeLevel = 0;
-    public static int metorTouchStar = 0;
+    public static int metorTouchStar = 1;
     private ImgaeChanger imgaeChanger;
     private Planet planet = null;
     private User user;
@@ -25,7 +25,20 @@ public class MetorUpgradePanel : MonoBehaviour
     }
     private void Update()
     {
+        metorTouchStar = planet.touchStar;
         if (planet.imageNumber == 1)
+        {
+            imgaeChanger.UpgradeImage();
+        }
+        else if (planet.imageNumber == 2)
+        {
+            imgaeChanger.UpgradeImage();
+        }
+        else if (planet.imageNumber == 3)
+        {
+            imgaeChanger.UpgradeImage();
+        }
+        else if (planet.imageNumber == 4)
         {
             imgaeChanger.UpgradeImage();
         }
@@ -49,6 +62,33 @@ public class MetorUpgradePanel : MonoBehaviour
                     imgaeChanger.UpgradeImage();
                 }
                 break;
+            case 21:
+                metorUpgradeLevel = planet.amount;
+                if (planet.imageNumber == 1)
+                {
+                    planet.imageNumber++;
+                    planetImage.sprite = planetSprite[planet.imageNumber];
+                    imgaeChanger.UpgradeImage();
+                }
+                break;
+            case 41:
+                metorUpgradeLevel = planet.amount;
+                if (planet.imageNumber == 2)
+                {
+                    planet.imageNumber++;
+                    planetImage.sprite = planetSprite[planet.imageNumber];
+                    imgaeChanger.UpgradeImage();
+                }
+                break;
+            case 61:
+                metorUpgradeLevel = planet.amount;
+                if (planet.imageNumber == 3)
+                {
+                    planet.imageNumber++;
+                    planetImage.sprite = planetSprite[planet.imageNumber];
+                    imgaeChanger.UpgradeImage();
+                }
+                break;
         }
         planetImage.sprite = planetSprite[planet.imageNumber];
         planetNameText.text = planet.name;
@@ -57,7 +97,7 @@ public class MetorUpgradePanel : MonoBehaviour
     }
     public void OnClickPurchase()
     {
-        metorTouchStar = User.touchStar;
+        metorTouchStar = planet.touchStar;
         if (GameManager.Instance.CurrentUser.star < planet.price)
         {
             return;
@@ -66,7 +106,7 @@ public class MetorUpgradePanel : MonoBehaviour
         Planet planetInList = GameManager.Instance.CurrentUser.metorList.Find((x) => x.name == planet.name);
         planetInList.amount++;
         planetInList.price = (long)(planetInList.price * 1.25f);
-        metorTouchStar += 30;
+        planet.touchStar += 30;
         PlanetUpdateUI();
         GameManager.Instance.uiManager.UpdateRocketPanel();
     }
