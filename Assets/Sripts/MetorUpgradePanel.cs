@@ -28,19 +28,19 @@ public class MetorUpgradePanel : MonoBehaviour
         metorTouchStar = planet.touchStar;
         if (planet.imageNumber == 1)
         {
-            imgaeChanger.UpgradeImage();
+            imgaeChanger.MetorImage();
         }
         else if (planet.imageNumber == 2)
         {
-            imgaeChanger.UpgradeImage();
+            imgaeChanger.MetorImage();
         }
         else if (planet.imageNumber == 3)
         {
-            imgaeChanger.UpgradeImage();
+            imgaeChanger.MetorImage();
         }
         else if (planet.imageNumber == 4)
         {
-            imgaeChanger.UpgradeImage();
+            imgaeChanger.MetorImage();
         }
     }
     public void SetValue(Planet planet)
@@ -59,7 +59,7 @@ public class MetorUpgradePanel : MonoBehaviour
                 {
                     planet.imageNumber++;
                     planetImage.sprite = planetSprite[planet.imageNumber];
-                    imgaeChanger.UpgradeImage();
+                    imgaeChanger.MetorUpgradeImage();
                 }
                 break;
             case 21:
@@ -68,7 +68,7 @@ public class MetorUpgradePanel : MonoBehaviour
                 {
                     planet.imageNumber++;
                     planetImage.sprite = planetSprite[planet.imageNumber];
-                    imgaeChanger.UpgradeImage();
+                    imgaeChanger.MetorUpgradeImage();
                 }
                 break;
             case 41:
@@ -77,7 +77,7 @@ public class MetorUpgradePanel : MonoBehaviour
                 {
                     planet.imageNumber++;
                     planetImage.sprite = planetSprite[planet.imageNumber];
-                    imgaeChanger.UpgradeImage();
+                    imgaeChanger.MetorUpgradeImage();
                 }
                 break;
             case 61:
@@ -86,7 +86,7 @@ public class MetorUpgradePanel : MonoBehaviour
                 {
                     planet.imageNumber++;
                     planetImage.sprite = planetSprite[planet.imageNumber];
-                    imgaeChanger.UpgradeImage();
+                    imgaeChanger.MetorUpgradeImage();
                 }
                 break;
         }

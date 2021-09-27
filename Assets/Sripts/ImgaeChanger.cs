@@ -11,8 +11,8 @@ public class ImgaeChanger : MonoBehaviour
     private Sprite[] sprites;
     private MetorUpgradePanel metorUpgradePanel;
     private PlanetUpgradePanel planetUpgradePanel;
-    private int eIndex;
-    private int mIndex;
+    public int eIndex;
+    public int mIndex;
 
     private void Start()
     {
@@ -22,24 +22,24 @@ public class ImgaeChanger : MonoBehaviour
     }
     public void EarthImage()
     {
-        if (eIndex == 1)
+        if (PlanetUpgradePanel.planetUpgradeLevel>=5&& PlanetUpgradePanel.planetUpgradeLevel <= 20)
         {
+            eIndex = 1;
             image.sprite = sprites[eIndex];
         }
-        else if (eIndex == 2)
+        else if (PlanetUpgradePanel.planetUpgradeLevel >= 21 && PlanetUpgradePanel.planetUpgradeLevel <= 40)
         {
+            eIndex = 2;
             image.sprite = sprites[eIndex];
         }
-        else if (eIndex == 3)
+        else if (PlanetUpgradePanel.planetUpgradeLevel >= 41 && PlanetUpgradePanel.planetUpgradeLevel <= 60)
         {
+            eIndex = 3;
             image.sprite = sprites[eIndex];
         }
-        else if (eIndex == 4)
+        else if (PlanetUpgradePanel.planetUpgradeLevel >= 41 && PlanetUpgradePanel.planetUpgradeLevel <= 61)
         {
-            image.sprite = sprites[eIndex];
-        }
-        else if (eIndex == 5)
-        {
+            eIndex = 4;
             image.sprite = sprites[eIndex];
         }
     }
@@ -81,7 +81,30 @@ public class ImgaeChanger : MonoBehaviour
             eIndex = 0;
         }
     }
-    public void UpgradeImage()
+    public void MetorImage()
+    {
+        if (MetorUpgradePanel.metorUpgradeLevel >= 5 && MetorUpgradePanel.metorUpgradeLevel <= 20)
+        {
+            mIndex = 1;
+            image.sprite = sprites[mIndex];
+        }
+        else if (MetorUpgradePanel.metorUpgradeLevel >= 21 && MetorUpgradePanel.metorUpgradeLevel <= 40)
+        {
+            mIndex = 2;
+            image.sprite = sprites[mIndex];
+        }
+        else if (MetorUpgradePanel.metorUpgradeLevel >= 41 && MetorUpgradePanel.metorUpgradeLevel <= 60)
+        {
+            mIndex = 3;
+            image.sprite = sprites[mIndex];
+        }
+        else if (MetorUpgradePanel.metorUpgradeLevel >= 41 && MetorUpgradePanel.metorUpgradeLevel <= 61)
+        {
+            mIndex = 4;
+            image.sprite = sprites[mIndex];
+        }
+    }
+    public void MetorUpgradeImage()
     {
         switch(MetorUpgradePanel.metorUpgradeLevel)
         {
