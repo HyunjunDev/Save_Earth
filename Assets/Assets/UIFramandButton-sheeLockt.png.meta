@@ -1,19 +1,13 @@
 fileFormatVersion: 2
-guid: cfa139cdccd079943869e4c4f732277b
+guid: e586957f3f139d543ba87a33715a1d8a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -92989390189203346
-    second: Rocket_Missile_Ani5_0
+      213: 7770021355651931479
+    second: UIFramandButton-sheeLockt_0
   - first:
-      213: 666213368610513195
-    second: Rocket_Missile_Ani5_1
-  - first:
-      213: -4032234664639102240
-    second: Rocket_Missile_Ani5_2
-  - first:
-      213: 3867562656209331813
-    second: Rocket_Missile_Ani5_3
+      213: -4343828264171979376
+    second: UIFramandButton-sheeLockt_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -44,7 +38,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -58,7 +52,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 48
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -115,76 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rocket_Missile_Ani5_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 150
-        width: 13
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e6074ed64a2a5bef0800000000000000
-      internalID: -92989390189203346
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rocket_Missile_Ani5_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 101
-        width: 13
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b2165ac678dde3900800000000000000
-      internalID: 666213368610513195
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rocket_Missile_Ani5_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 49
-        width: 13
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0e28b2bafef9a08c0800000000000000
-      internalID: -4032234664639102240
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rocket_Missile_Ani5_3
+      name: UIFramandButton-sheeLockt_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 13
-        height: 49
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,8 +123,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5666ced9eb75ca530800000000000000
-      internalID: 3867562656209331813
+      spriteID: 75d15d07149a4db60800000000000000
+      internalID: 7770021355651931479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UIFramandButton-sheeLockt_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09d3ab4553f97b3c0800000000000000
+      internalID: -4343828264171979376
       vertices: []
       indices: 
       edges: []

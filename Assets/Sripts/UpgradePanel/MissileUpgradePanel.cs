@@ -17,11 +17,16 @@ public class MissileUpgradePanel : MonoBehaviour
     private Button purchaseButton = null;
     private RocketMovement rocketMovement;
     public static int missileUpgradeLevel = 0;
-    public static int missileAutoStar = 30;
+    public static float missileAutoStar = 0;
     private Rocket rocket = null;
+    public GameObject rocketMissile;
     public void Start()
     {
         rocketMovement = GameObject.Find("Rocket_Missile").GetComponent<RocketMovement>();
+        if (missileUpgradeLevel == 0)
+        {
+            rocketMissile.SetActive(false);
+        }
     }
     private void Update()
     {
@@ -50,6 +55,10 @@ public class MissileUpgradePanel : MonoBehaviour
     public void MissileUpdateUI()
     {
         missileUpgradeLevel = rocket.amount;
+        if (missileUpgradeLevel == 1)
+        {
+            rocketMissile.SetActive(true);
+        }
         switch (missileUpgradeLevel)
         {
             case 5:
@@ -100,8 +109,9 @@ public class MissileUpgradePanel : MonoBehaviour
         GameManager.Instance.CurrentUser.star -= rocket.price;
         Rocket rocketInList = GameManager.Instance.CurrentUser.rocketMissileList.Find((x) => x.name == rocket.name);
         rocketInList.amount++;
-        rocketInList.price = (long)(rocketInList.price * 1.25f);
+        rocketInList.price = (long)(rocketInList.price * 1.2f);
         rocket.autoStar += 300;
+        rocket.autoStar *= 1.3f;
         MissileUpdateUI();
         GameManager.Instance.uiManager.UpdateRocketPanel();
     }

@@ -391,8 +391,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9cc54fec067c3f4181f3ad619af8778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idlemg: {fileID: 930882387784955445, guid: 58248adf9a2d57942927c24e975e1fba, type: 3}
-  selectedmg: {fileID: 5506365504405586488, guid: 58248adf9a2d57942927c24e975e1fba, type: 3}
+  idlemg: {fileID: 5506365504405586488, guid: 58248adf9a2d57942927c24e975e1fba, type: 3}
+  selectedmg: {fileID: 930882387784955445, guid: 58248adf9a2d57942927c24e975e1fba, type: 3}
 --- !u!222 &47943846
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7425,6 +7425,7 @@ MonoBehaviour:
   - {fileID: 7780712567689579608, guid: 0324ecc582877bf4298485acb4eb3399, type: 3}
   - {fileID: -3140478029784501012, guid: 6feb3c92263a12f42bb9598b067ede58, type: 3}
   purchaseButton: {fileID: 1247782459}
+  rocketSpaceship: {fileID: 1152916482}
 --- !u!1 &700282514
 GameObject:
   m_ObjectHideFlags: 0
@@ -7889,6 +7890,7 @@ MonoBehaviour:
   - {fileID: 5989568060501940120, guid: dc62ef60ee9dbf042a414c9f91400221, type: 3}
   - {fileID: 4859028856252147271, guid: eb83226632e40fc4b94f4c237c1fadb0, type: 3}
   purchaseButton: {fileID: 59368071}
+  rocketNormal: {fileID: 1894456178}
 --- !u!1 &906961741
 GameObject:
   m_ObjectHideFlags: 0
@@ -8203,6 +8205,7 @@ MonoBehaviour:
   - {fileID: 4109434551861106663, guid: f77156a6bb545214191f7ed716eef5ca, type: 3}
   - {fileID: -4032234664639102240, guid: cfa139cdccd079943869e4c4f732277b, type: 3}
   purchaseButton: {fileID: 1727044987}
+  rocketMissile: {fileID: 1502993818}
 --- !u!1 &1119037721
 GameObject:
   m_ObjectHideFlags: 0
@@ -13465,15 +13468,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Content: {fileID: 538810685}
+  m_Content: {fileID: 2142368542}
   m_Horizontal: 0
   m_Vertical: 1
-  m_MovementType: 2
+  m_MovementType: 1
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
   m_ScrollSensitivity: 1
-  m_Viewport: {fileID: 0}
+  m_Viewport: {fileID: 538810685}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 0}
   m_HorizontalScrollbarVisibility: 0
@@ -14300,42 +14303,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   user:
     nickname: "\uAE40\uD604\uC900"
-    star: 100000000000
+    star: 1000
     rocketList:
     - name: "\uAE30\uBCF8 \uB85C\uCF13"
       imageNumber: 0
       amount: 0
-      price: 150
-      ePs: 3
-      autoStar: 1000
+      price: 100
+      ePs: 0
+      autoStar: 0
     rocketMissileList:
     - name: "\uBBF8\uC0AC\uC77C \uB85C\uCF13"
       imageNumber: 0
       amount: 0
       price: 300
-      ePs: 10
-      autoStar: 5000
+      ePs: 0
+      autoStar: 0
     rocketSpaceshipList:
     - name: "\uC2A4\uD398\uC774\uC2A4\uC27D \uB85C\uCF13"
       imageNumber: 0
       amount: 0
-      price: 1000
-      ePs: 20
-      autoStar: 20000
+      price: 3000
+      ePs: 0
+      autoStar: 0
     planetList:
     - name: "\uC9C0\uAD6C"
       imageNumber: 0
       amount: 0
-      price: 300
-      ePs: 3
-      touchStar: 10
+      price: 10
+      ePs: 0
+      touchStar: 1
     metorList:
     - name: "\uC6B4\uC11D"
       imageNumber: 0
       amount: 0
       price: 1000
-      ePs: 10
-      touchStar: 20
+      ePs: 0
+      touchStar: 0
   textPool: {fileID: 21380590}
   contentsPanels:
   - {fileID: 2142368541}
@@ -15047,8 +15050,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9cc54fec067c3f4181f3ad619af8778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idlemg: {fileID: 930882387784955445, guid: 58248adf9a2d57942927c24e975e1fba, type: 3}
-  selectedmg: {fileID: 5506365504405586488, guid: 58248adf9a2d57942927c24e975e1fba, type: 3}
+  idlemg: {fileID: 5506365504405586488, guid: 58248adf9a2d57942927c24e975e1fba, type: 3}
+  selectedmg: {fileID: 930882387784955445, guid: 58248adf9a2d57942927c24e975e1fba, type: 3}
 --- !u!222 &1575545804
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16380,7 +16383,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -4}
+  m_AnchoredPosition: {x: 0, y: -0.000015258789}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2142368543

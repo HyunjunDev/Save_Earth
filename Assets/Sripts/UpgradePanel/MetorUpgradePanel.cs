@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-
-public class PlanetUpgradePanel : MonoBehaviour
+public class MetorUpgradePanel : MonoBehaviour
 {
     [SerializeField]
     public Image planetImage = null;
@@ -15,33 +14,33 @@ public class PlanetUpgradePanel : MonoBehaviour
     public Sprite[] planetSprite = null;
     [SerializeField]
     private Button purchaseButton = null;
-    public static int planetUpgradeLevel = 0;
-    public static int planetTouchStar = 1;
+    public static int metorUpgradeLevel = 0;
+    public static float metorTouchStar = 0;
     private ImgaeChanger imgaeChanger;
     private Planet planet = null;
     private User user;
     private void Start()
     {
-        imgaeChanger = GameObject.Find("Earth").GetComponent<ImgaeChanger>();
+        imgaeChanger = GameObject.Find("Metor").GetComponent<ImgaeChanger>();
     }
     private void Update()
     {
-        planetTouchStar = planet.touchStar;
+        metorTouchStar = planet.touchStar;
         if (planet.imageNumber == 1)
         {
-            imgaeChanger.EarthImage();
+            imgaeChanger.MetorImage();
         }
         else if (planet.imageNumber == 2)
         {
-            imgaeChanger.EarthImage();
+            imgaeChanger.MetorImage();
         }
         else if (planet.imageNumber == 3)
         {
-            imgaeChanger.EarthImage();
+            imgaeChanger.MetorImage();
         }
         else if (planet.imageNumber == 4)
         {
-            imgaeChanger.EarthImage();
+            imgaeChanger.MetorImage();
         }
     }
     public void SetValue(Planet planet)
@@ -51,39 +50,43 @@ public class PlanetUpgradePanel : MonoBehaviour
     }
     public void PlanetUpdateUI()
     {
-        planetUpgradeLevel = planet.amount;
-        switch (planetUpgradeLevel)
+        metorUpgradeLevel = planet.amount;
+        switch (metorUpgradeLevel)
         {
             case 5:
-                if(planet.imageNumber == 0)
+                metorUpgradeLevel = planet.amount;
+                if(planet.imageNumber==0)
                 {
                     planet.imageNumber++;
                     planetImage.sprite = planetSprite[planet.imageNumber];
-                    imgaeChanger.EarthUpgradeImage();
+                    imgaeChanger.MetorUpgradeImage();
                 }
                 break;
             case 21:
+                metorUpgradeLevel = planet.amount;
                 if (planet.imageNumber == 1)
                 {
                     planet.imageNumber++;
                     planetImage.sprite = planetSprite[planet.imageNumber];
-                    imgaeChanger.EarthUpgradeImage();
+                    imgaeChanger.MetorUpgradeImage();
                 }
                 break;
             case 41:
+                metorUpgradeLevel = planet.amount;
                 if (planet.imageNumber == 2)
                 {
                     planet.imageNumber++;
                     planetImage.sprite = planetSprite[planet.imageNumber];
-                    imgaeChanger.EarthUpgradeImage();
+                    imgaeChanger.MetorUpgradeImage();
                 }
                 break;
             case 61:
+                metorUpgradeLevel = planet.amount;
                 if (planet.imageNumber == 3)
                 {
                     planet.imageNumber++;
                     planetImage.sprite = planetSprite[planet.imageNumber];
-                    imgaeChanger.EarthUpgradeImage();
+                    imgaeChanger.MetorUpgradeImage();
                 }
                 break;
         }
@@ -94,16 +97,17 @@ public class PlanetUpgradePanel : MonoBehaviour
     }
     public void OnClickPurchase()
     {
-        planetTouchStar = planet.touchStar;
+        metorTouchStar = planet.touchStar;
         if (GameManager.Instance.CurrentUser.star < planet.price)
         {
             return;
         }
         GameManager.Instance.CurrentUser.star -= planet.price;
-        Planet planetInList = GameManager.Instance.CurrentUser.planetList.Find((x) => x.name == planet.name);
+        Planet planetInList = GameManager.Instance.CurrentUser.metorList.Find((x) => x.name == planet.name);
         planetInList.amount++;
-        planetInList.price = (long)(planetInList.price * 1.25f);
-        planet.touchStar += 10;
+        planetInList.price = (long)(planetInList.price * 1.6f);
+        planet.touchStar += 20;
+        planet.touchStar *= 1.3f;
         PlanetUpdateUI();
         GameManager.Instance.uiManager.UpdateRocketPanel();
     }

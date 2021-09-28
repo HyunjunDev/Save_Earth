@@ -5,7 +5,7 @@ public class Rocket
     public string name;
     public int imageNumber;
     public int amount;
-    public long price;
-    public long ePs;
-    public int autoStar;
+    public double price;
+    public double ePs;
+    public float autoStar;
 }

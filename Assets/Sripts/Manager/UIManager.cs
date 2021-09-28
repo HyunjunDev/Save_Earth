@@ -110,12 +110,12 @@ public class UIManager : MonoBehaviour
             newText = Instantiate(StarTextTemplate, GameManager.Instance.Pool.parent).GetComponent<EffectText>();
         }
         newText.gameObject.SetActive(true);
-        newText.Show(PlanetUpgradePanel.planetTouchStar + MetorUpgradePanel.metorTouchStar);
+        newText.Show((int)PlanetUpgradePanel.planetTouchStar + (int)MetorUpgradePanel.metorTouchStar);
         UpdateRocketPanel();
     }
 
     public void UpdateRocketPanel()
     {
-        rocketText.text = string.Format("{0} STAR", GameManager.Instance.CurrentUser.star);
+        rocketText.text = string.Format("{0} STAR", (int)GameManager.Instance.CurrentUser.star);
     }
 }
