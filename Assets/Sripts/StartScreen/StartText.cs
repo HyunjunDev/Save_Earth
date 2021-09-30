@@ -5,10 +5,11 @@ using UnityEngine.EventSystems;
 
 public class StartText : MonoBehaviour
 {
-    Text flashingText; 
+    Text flashingText;
     void Start () 
     { 
-        flashingText = GetComponent<Text> (); StartCoroutine (BlinkText()); 
+        flashingText = GetComponent<Text> (); 
+        StartCoroutine(BlinkText());
     } 
     public IEnumerator BlinkText()
     { 
@@ -20,4 +21,5 @@ public class StartText : MonoBehaviour
             yield return new WaitForSeconds (.5f); 
         } 
     }
+
 }

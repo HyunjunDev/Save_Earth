@@ -37,7 +37,7 @@ public class ImgaeChanger : MonoBehaviour
             eIndex = 3;
             image.sprite = sprites[eIndex];
         }
-        else if (PlanetUpgradePanel.planetUpgradeLevel >= 41 && PlanetUpgradePanel.planetUpgradeLevel <= 61)
+        else if (PlanetUpgradePanel.planetUpgradeLevel >= 61)
         {
             eIndex = 4;
             image.sprite = sprites[eIndex];
@@ -98,7 +98,7 @@ public class ImgaeChanger : MonoBehaviour
             mIndex = 3;
             image.sprite = sprites[mIndex];
         }
-        else if (MetorUpgradePanel.metorUpgradeLevel >= 41 && MetorUpgradePanel.metorUpgradeLevel <= 61)
+        else if (MetorUpgradePanel.metorUpgradeLevel >= 61)
         {
             mIndex = 4;
             image.sprite = sprites[mIndex];

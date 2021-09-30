@@ -8,4 +8,11 @@ public class Planet
     public double price;
     public double ePs;
     public float touchStar;
+    public bool Locked
+    {
+        get
+        {
+            return (GameManager.Instance.CurrentUser.star < price) && (amount < 1);
+        }
+    }
 }

@@ -15,6 +15,8 @@ public class MissileUpgradePanel : MonoBehaviour
     private Sprite[] rocketMissileSprite = null;
     [SerializeField]
     private Button purchaseButton = null;
+    [SerializeField]
+    private Image backgroundImage = null;
     private RocketMovement rocketMovement;
     public static int missileUpgradeLevel = 0;
     public static float missileAutoStar = 0;
@@ -22,6 +24,7 @@ public class MissileUpgradePanel : MonoBehaviour
     public GameObject rocketMissile;
     public void Start()
     {
+        UpdateValues();
         rocketMovement = GameObject.Find("Rocket_Missile").GetComponent<RocketMovement>();
         if (missileUpgradeLevel == 0)
         {
@@ -30,6 +33,8 @@ public class MissileUpgradePanel : MonoBehaviour
     }
     private void Update()
     {
+        UpdateValues();
+
         if (rocket.imageNumber == 1)
         {
             rocketMovement.ChangeMissileSprtie();
@@ -46,11 +51,41 @@ public class MissileUpgradePanel : MonoBehaviour
         {
             rocketMovement.ChangeMissileSprtie();
         }
+        if (missileUpgradeLevel>= 50)
+        {
+            missileAmountText.text = "MAX";
+            purchaseButton.gameObject.SetActive(false);
+        }
     }
     public void SetValue(Rocket rocketMissile)
     {
         this.rocket = rocketMissile;
         MissileUpdateUI();
+    }
+    public void UpdateValues()
+    {
+        missilePriceText.text = string.Format("{0:N0} STAR", rocket.price);
+        if (rocketMissileSprite != null)
+        {
+            rocketMissileImage.sprite = rocketMissileSprite[rocket.imageNumber];
+        }
+        if (!rocket.Locked&&UpgradePanel.upgradeLevel>=20)
+        {
+            missileNameText.text = rocket.name;
+            missileAmountText.text = string.Format("{0}", rocket.amount);
+            rocketMissileImage.color = Color.white;
+            purchaseButton.gameObject.SetActive(true);
+            purchaseButton.interactable = GameManager.Instance.CurrentUser.star >= rocket.price;
+            backgroundImage.color = GameManager.Instance.CurrentUser.star >= rocket.price ? Color.white : Color.gray;
+        }
+        else
+        {
+            missileNameText.text = "????";
+            missileAmountText.text = "";
+            backgroundImage.color = Color.gray;
+            rocketMissileImage.color = Color.black;
+            purchaseButton.gameObject.SetActive(false);
+        }
     }
     public void MissileUpdateUI()
     {
@@ -96,8 +131,8 @@ public class MissileUpgradePanel : MonoBehaviour
         }
         rocketMissileImage.sprite = rocketMissileSprite[rocket.imageNumber];
         missileNameText.text = rocket.name;
-        missilePriceText.text = string.Format("{0} STAR", rocket.price);
-        missileAmountText.text = string.Format("{0}", rocket.amount);
+        missilePriceText.text = string.Format("{0:N0} STAR", rocket.price);
+        missileAmountText.text = string.Format("{0:N0}", rocket.amount);
     }
     public void OnClickPurchase()
     {
@@ -109,10 +144,11 @@ public class MissileUpgradePanel : MonoBehaviour
         GameManager.Instance.CurrentUser.star -= rocket.price;
         Rocket rocketInList = GameManager.Instance.CurrentUser.rocketMissileList.Find((x) => x.name == rocket.name);
         rocketInList.amount++;
-        rocketInList.price = (long)(rocketInList.price * 1.2f);
+        rocketInList.price = (long)(rocketInList.price * 1.15f+100);
         rocket.autoStar += 300;
-        rocket.autoStar *= 1.3f;
+        rocket.autoStar *= 1.1f;
         MissileUpdateUI();
+        UpdateValues();
         GameManager.Instance.uiManager.UpdateRocketPanel();
     }
 }

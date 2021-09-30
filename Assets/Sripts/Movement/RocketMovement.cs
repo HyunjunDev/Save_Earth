@@ -25,7 +25,7 @@ public class RocketMovement : MonoBehaviour
         else if (collision.gameObject.tag == "Metor" && gameObject.CompareTag("Rocket_Normal"))
         {
             animator.SetBool("IsExplosion", true);
-            GameManager.Instance.CurrentUser.star += UpgradePanel.normalAutoStar;
+            GameManager.Instance.CurrentUser.star += UpgradePanel.autoStar;
             Invoke("FAni", 1f);
         }
         else if (collision.gameObject.tag == "Metor" && gameObject.CompareTag("Rocket_Spaceship"))

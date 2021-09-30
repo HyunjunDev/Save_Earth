@@ -14,6 +14,8 @@ public class MetorUpgradePanel : MonoBehaviour
     public Sprite[] planetSprite = null;
     [SerializeField]
     private Button purchaseButton = null;
+    [SerializeField]
+    private Image backgroundImage = null;
     public static int metorUpgradeLevel = 0;
     public static float metorTouchStar = 0;
     private ImgaeChanger imgaeChanger;
@@ -21,10 +23,12 @@ public class MetorUpgradePanel : MonoBehaviour
     private User user;
     private void Start()
     {
+        UpdateValues();
         imgaeChanger = GameObject.Find("Metor").GetComponent<ImgaeChanger>();
     }
     private void Update()
     {
+        UpdateValues();
         metorTouchStar = planet.touchStar;
         if (planet.imageNumber == 1)
         {
@@ -41,6 +45,11 @@ public class MetorUpgradePanel : MonoBehaviour
         else if (planet.imageNumber == 4)
         {
             imgaeChanger.MetorImage();
+        }
+        if (metorUpgradeLevel >= 70)
+        {
+            amountText.text = "MAX";
+            purchaseButton.gameObject.SetActive(false);
         }
     }
     public void SetValue(Planet planet)
@@ -92,8 +101,33 @@ public class MetorUpgradePanel : MonoBehaviour
         }
         planetImage.sprite = planetSprite[planet.imageNumber];
         planetNameText.text = planet.name;
-        priceText.text = string.Format("{0} STAR", planet.price);
-        amountText.text = string.Format("{0}", planet.amount);
+        priceText.text = string.Format("{0:N0} STAR", planet.price);
+        amountText.text = string.Format("{0:N0}", planet.amount);
+    }
+    public void UpdateValues()
+    {
+        priceText.text = string.Format("{0:N0} STAR", planet.price);
+        if (planetSprite != null)
+        {
+            planetImage.sprite = planetSprite[planet.imageNumber];
+        }
+        if (!planet.Locked && PlanetUpgradePanel.planetUpgradeLevel >= 55)
+        {
+            planetNameText.text = planet.name;
+            amountText.text = string.Format("{0}", planet.amount);
+            planetImage.color = Color.white;
+            purchaseButton.gameObject.SetActive(true);
+            purchaseButton.interactable = GameManager.Instance.CurrentUser.star >= planet.price;
+            backgroundImage.color = GameManager.Instance.CurrentUser.star >= planet.price ? Color.white : Color.gray;
+        }
+        else
+        {
+            planetNameText.text = "????";
+            amountText.text = "";
+            backgroundImage.color = Color.gray;
+            planetImage.color = Color.black;
+            purchaseButton.gameObject.SetActive(false);
+        }
     }
     public void OnClickPurchase()
     {
@@ -105,9 +139,10 @@ public class MetorUpgradePanel : MonoBehaviour
         GameManager.Instance.CurrentUser.star -= planet.price;
         Planet planetInList = GameManager.Instance.CurrentUser.metorList.Find((x) => x.name == planet.name);
         planetInList.amount++;
-        planetInList.price = (long)(planetInList.price * 1.6f);
-        planet.touchStar += 20;
-        planet.touchStar *= 1.3f;
+        planetInList.price = (long)(planetInList.price * 1.1f+5000);
+        planet.touchStar += 300;
+        planet.touchStar *= 1.075f;
+        UpdateValues();
         PlanetUpdateUI();
         GameManager.Instance.uiManager.UpdateRocketPanel();
     }

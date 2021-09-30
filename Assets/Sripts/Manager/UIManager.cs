@@ -116,6 +116,6 @@ public class UIManager : MonoBehaviour
 
     public void UpdateRocketPanel()
     {
-        rocketText.text = string.Format("{0} STAR", (int)GameManager.Instance.CurrentUser.star);
+        rocketText.text = string.Format("{0:N0} STAR", (int)GameManager.Instance.CurrentUser.star);
     }
 }

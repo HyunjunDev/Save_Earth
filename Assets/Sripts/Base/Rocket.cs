@@ -8,4 +8,11 @@ public class Rocket
     public double price;
     public double ePs;
     public float autoStar;
+    public bool Locked
+    {
+        get
+        {
+            return (GameManager.Instance.CurrentUser.star < price) && (amount < 1);
+        }
+    }
 }

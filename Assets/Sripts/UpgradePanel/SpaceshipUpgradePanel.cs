@@ -15,6 +15,8 @@ public class SpaceshipUpgradePanel : MonoBehaviour
     private Sprite[] rocketspaceshipSprite = null;
     [SerializeField]
     private Button purchaseButton = null;
+    [SerializeField]
+    private Image backgroundImage = null;
     private RocketMovement rocketMovement;
     public static int spaceshipUpgradeLevel = 0;
     public static float SpaceshipAutoStar = 0;
@@ -22,6 +24,7 @@ public class SpaceshipUpgradePanel : MonoBehaviour
     public GameObject rocketSpaceship;
     public void Start()
     {
+        UpdateValues();
         rocketMovement = GameObject.Find("Rocket_Spaceship").GetComponent<RocketMovement>();
         if (spaceshipUpgradeLevel==0)
         {
@@ -30,6 +33,7 @@ public class SpaceshipUpgradePanel : MonoBehaviour
     }
     private void Update()
     {
+        UpdateValues();
         if (rocket.imageNumber==1)
         {
             rocketMovement.ChangeSpaceshipSprtie();
@@ -46,11 +50,42 @@ public class SpaceshipUpgradePanel : MonoBehaviour
         {
             rocketMovement.ChangeSpaceshipSprtie();
         }
+        if (spaceshipUpgradeLevel >= 50)
+        {
+            spaceAmountText.text = "MAX";
+            purchaseButton.gameObject.SetActive(false);
+        }
+      
     }
     public void SetValue(Rocket rocketSpaceship)
     {
         this.rocket = rocketSpaceship;
         SpaceshipUpdateUI();
+    }
+    public void UpdateValues()
+    {
+        spaceshipPriceText.text = string.Format("{0:N0} STAR", rocket.price);
+        if (rocketspaceshipSprite != null)
+        {
+            rocketSpaceshipImage.sprite = rocketspaceshipSprite[rocket.imageNumber];
+        }
+        if (!rocket.Locked&&MissileUpgradePanel.missileUpgradeLevel>=25)
+        {
+            spaceshipNameText.text = rocket.name;
+            spaceAmountText.text = string.Format("{0}", rocket.amount);
+            rocketSpaceshipImage.color = Color.white;
+            purchaseButton.gameObject.SetActive(true);
+            purchaseButton.interactable = GameManager.Instance.CurrentUser.star >= rocket.price;
+            backgroundImage.color = GameManager.Instance.CurrentUser.star >= rocket.price ? Color.white : Color.gray;
+        }
+        else
+        {
+            spaceshipNameText.text = "????";
+            spaceAmountText.text = "";
+            backgroundImage.color = Color.gray;
+            rocketSpaceshipImage.color = Color.black;
+            purchaseButton.gameObject.SetActive(false);
+        }
     }
     public void SpaceshipUpdateUI()
     {
@@ -96,8 +131,8 @@ public class SpaceshipUpgradePanel : MonoBehaviour
         }
         rocketSpaceshipImage.sprite = rocketspaceshipSprite[rocket.imageNumber];
         spaceshipNameText.text = rocket.name;
-        spaceshipPriceText.text = string.Format("{0} STAR", rocket.price);
-        spaceAmountText.text = string.Format("{0}", rocket.amount);
+        spaceshipPriceText.text = string.Format("{0:N0} STAR", rocket.price);
+        spaceAmountText.text = string.Format("{0:N0}", rocket.amount);
     }
     public void OnClickPurchase()
     {
@@ -109,10 +144,11 @@ public class SpaceshipUpgradePanel : MonoBehaviour
         GameManager.Instance.CurrentUser.star -= rocket.price;
         Rocket rocketInList = GameManager.Instance.CurrentUser.rocketSpaceshipList.Find((x) => x.name == rocket.name);
         rocketInList.amount++;
-        rocketInList.price = (long)(rocketInList.price * 1.2f);
+        rocketInList.price = (long)(rocketInList.price * 1.15f+300);
         rocket.autoStar += 1000;
-        rocket.autoStar *= 1.4f;
+        rocket.autoStar *= 1.1f;
         SpaceshipUpdateUI();
+        UpdateValues();
         GameManager.Instance.uiManager.UpdateRocketPanel();
     }
 }
