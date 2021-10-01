@@ -94,7 +94,7 @@ public class UpgradePanel : MonoBehaviour
         }
         switch (upgradeLevel)
         {
-            case 5:
+            case 10:
                 if (rocket.imageNumber == 0)
                 {
                     rocket.imageNumber++;
@@ -102,7 +102,7 @@ public class UpgradePanel : MonoBehaviour
                     rocketMovement.ChangeRocketSprite();
                 }
                 break;
-            case 21:
+            case 20:
                 if (rocket.imageNumber == 1)
                 {
                     rocket.imageNumber++;
@@ -110,7 +110,7 @@ public class UpgradePanel : MonoBehaviour
                     rocketMovement.ChangeRocketSprite();
                 }
                 break;
-            case 41:
+            case 30:
                 if (rocket.imageNumber == 2)
                 {
                     rocket.imageNumber++;
@@ -118,7 +118,7 @@ public class UpgradePanel : MonoBehaviour
                     rocketMovement.ChangeRocketSprite();
                 }
                 break;
-            case 61:
+            case 40:
                 if (rocket.imageNumber == 3)
                 {
                     rocket.imageNumber++;
@@ -142,9 +142,9 @@ public class UpgradePanel : MonoBehaviour
         GameManager.Instance.CurrentUser.star -= rocket.price;
         Rocket rocketInList = GameManager.Instance.CurrentUser.rocketList.Find((x) => x.name == rocket.name);
         rocketInList.amount++;
-        rocketInList.price = (long)(rocketInList.price * 1.1f+30);
+        rocketInList.price = (long)(rocketInList.price * 1.02f+30);
         rocket.autoStar += 100;
-        rocket.autoStar *= 1.03f;
+        rocket.autoStar *= 1.01f;
         UpdateUI();
         UpdateValues();
         GameManager.Instance.uiManager.UpdateRocketPanel();

@@ -118,10 +118,10 @@ TextureImporter:
       name: Train_Rocket_Ani3_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 22
-        width: 49
-        height: 21
+        x: 22
+        y: 203
+        width: 21
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,10 +139,10 @@ TextureImporter:
       name: Train_Rocket_Ani3_1
       rect:
         serializedVersion: 2
-        x: 68
-        y: 22
-        width: 49
-        height: 21
+        x: 22
+        y: 139
+        width: 21
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,10 +160,10 @@ TextureImporter:
       name: Train_Rocket_Ani3_2
       rect:
         serializedVersion: 2
-        x: 132
-        y: 22
-        width: 49
-        height: 21
+        x: 22
+        y: 75
+        width: 21
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,10 +181,10 @@ TextureImporter:
       name: Train_Rocket_Ani3_3
       rect:
         serializedVersion: 2
-        x: 196
-        y: 22
-        width: 49
-        height: 21
+        x: 22
+        y: 11
+        width: 21
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

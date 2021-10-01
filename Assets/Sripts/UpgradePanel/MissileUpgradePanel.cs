@@ -96,7 +96,7 @@ public class MissileUpgradePanel : MonoBehaviour
         }
         switch (missileUpgradeLevel)
         {
-            case 5:
+            case 10:
                 if(rocket.imageNumber==0)
                 {
                     rocket.imageNumber++;
@@ -104,7 +104,7 @@ public class MissileUpgradePanel : MonoBehaviour
                     rocketMovement.ChangeMissileSprtie();
                 }
                 break;
-            case 21:
+            case 20:
                 if (rocket.imageNumber == 1)
                 {
                     rocket.imageNumber++;
@@ -112,7 +112,7 @@ public class MissileUpgradePanel : MonoBehaviour
                     rocketMovement.ChangeMissileSprtie();
                 }
                 break;
-            case 41:
+            case 30:
                 if (rocket.imageNumber == 2)
                 {
                     rocket.imageNumber++;
@@ -120,7 +120,7 @@ public class MissileUpgradePanel : MonoBehaviour
                     rocketMovement.ChangeMissileSprtie();
                 }
                 break;
-            case 61:
+            case 40:
                 if (rocket.imageNumber == 3)
                 {
                     rocket.imageNumber++;
@@ -144,9 +144,9 @@ public class MissileUpgradePanel : MonoBehaviour
         GameManager.Instance.CurrentUser.star -= rocket.price;
         Rocket rocketInList = GameManager.Instance.CurrentUser.rocketMissileList.Find((x) => x.name == rocket.name);
         rocketInList.amount++;
-        rocketInList.price = (long)(rocketInList.price * 1.15f+100);
+        rocketInList.price = (long)(rocketInList.price * 1.03f+100);
         rocket.autoStar += 300;
-        rocket.autoStar *= 1.1f;
+        rocket.autoStar *= 1.02f;
         MissileUpdateUI();
         UpdateValues();
         GameManager.Instance.uiManager.UpdateRocketPanel();

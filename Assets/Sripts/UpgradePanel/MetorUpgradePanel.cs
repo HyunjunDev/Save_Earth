@@ -32,19 +32,19 @@ public class MetorUpgradePanel : MonoBehaviour
         metorTouchStar = planet.touchStar;
         if (planet.imageNumber == 1)
         {
-            imgaeChanger.MetorImage();
+            imgaeChanger.MoonImage();
         }
         else if (planet.imageNumber == 2)
         {
-            imgaeChanger.MetorImage();
+            imgaeChanger.MoonImage();
         }
         else if (planet.imageNumber == 3)
         {
-            imgaeChanger.MetorImage();
+            imgaeChanger.MoonImage();
         }
         else if (planet.imageNumber == 4)
         {
-            imgaeChanger.MetorImage();
+            imgaeChanger.MoonImage();
         }
         if (metorUpgradeLevel >= 70)
         {
@@ -68,7 +68,7 @@ public class MetorUpgradePanel : MonoBehaviour
                 {
                     planet.imageNumber++;
                     planetImage.sprite = planetSprite[planet.imageNumber];
-                    imgaeChanger.MetorUpgradeImage();
+                    imgaeChanger.MoonUpgradeImage();
                 }
                 break;
             case 21:
@@ -77,7 +77,7 @@ public class MetorUpgradePanel : MonoBehaviour
                 {
                     planet.imageNumber++;
                     planetImage.sprite = planetSprite[planet.imageNumber];
-                    imgaeChanger.MetorUpgradeImage();
+                    imgaeChanger.MoonUpgradeImage();
                 }
                 break;
             case 41:
@@ -86,7 +86,7 @@ public class MetorUpgradePanel : MonoBehaviour
                 {
                     planet.imageNumber++;
                     planetImage.sprite = planetSprite[planet.imageNumber];
-                    imgaeChanger.MetorUpgradeImage();
+                    imgaeChanger.MoonUpgradeImage();
                 }
                 break;
             case 61:
@@ -95,7 +95,7 @@ public class MetorUpgradePanel : MonoBehaviour
                 {
                     planet.imageNumber++;
                     planetImage.sprite = planetSprite[planet.imageNumber];
-                    imgaeChanger.MetorUpgradeImage();
+                    imgaeChanger.MoonUpgradeImage();
                 }
                 break;
         }

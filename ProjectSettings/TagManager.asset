@@ -8,6 +8,12 @@ TagManager:
   - Rocket_Missile
   - Rocket_Spaceship
   - Rocket_Normal
+  - Rocket_Train
+  - Rocket_Shuttle
+  - Rocket_Face
+  - Rocket_Pencil
+  - Rocket_Speed
+  - Rocket_Banana
   layers:
   - Default
   - TransparentFX
@@ -44,4 +50,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Popup
+    uniqueID: 994433389
     locked: 0

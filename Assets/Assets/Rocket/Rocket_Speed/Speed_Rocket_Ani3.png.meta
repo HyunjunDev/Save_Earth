@@ -118,10 +118,10 @@ TextureImporter:
       name: Speed_Rocket_Ani3_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 13
-        width: 12
-        height: 7
+        x: 12
+        y: 105
+        width: 7
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,10 +139,10 @@ TextureImporter:
       name: Speed_Rocket_Ani3_1
       rect:
         serializedVersion: 2
-        x: 41
-        y: 13
-        width: 12
-        height: 7
+        x: 12
+        y: 72
+        width: 7
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,10 +160,10 @@ TextureImporter:
       name: Speed_Rocket_Ani3_2
       rect:
         serializedVersion: 2
-        x: 72
-        y: 13
-        width: 13
-        height: 7
+        x: 12
+        y: 41
+        width: 7
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,10 +181,10 @@ TextureImporter:
       name: Speed_Rocket_Ani3_3
       rect:
         serializedVersion: 2
-        x: 105
-        y: 13
-        width: 12
-        height: 7
+        x: 12
+        y: 9
+        width: 7
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

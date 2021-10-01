@@ -11,14 +11,17 @@ public class ImgaeChanger : MonoBehaviour
     private Sprite[] sprites;
     private MetorUpgradePanel metorUpgradePanel;
     private PlanetUpgradePanel planetUpgradePanel;
+    private MoonUpgradePanel moonUpgradePanel;
     public int eIndex;
     public int mIndex;
-
+    public int moonIndex;
     private void Start()
     {
         image = GetComponent<Image>();
         metorUpgradePanel = GameObject.Find("Metor").GetComponent<MetorUpgradePanel>();
         planetUpgradePanel = GameObject.Find("Earth").GetComponent<PlanetUpgradePanel>();
+        moonUpgradePanel = GameObject.Find("Moon").GetComponent<MoonUpgradePanel>();
+
     }
     public void EarthImage()
     {
@@ -141,5 +144,66 @@ public class ImgaeChanger : MonoBehaviour
             {
                 mIndex = 0;
             }
-    }    
+    }
+    public void MoonImage()
+    {
+        if (MoonUpgradePanel.moonUpgradeLevel >= 5 && MoonUpgradePanel.moonUpgradeLevel <= 20)
+        {
+            moonIndex = 1;
+            image.sprite = sprites[moonIndex];
+        }
+        else if (MoonUpgradePanel.moonUpgradeLevel >= 21 && MoonUpgradePanel.moonUpgradeLevel <= 40)
+        {
+            moonIndex = 2;
+            image.sprite = sprites[moonIndex];
+        }
+        else if (MoonUpgradePanel.moonUpgradeLevel >= 41 && MoonUpgradePanel.moonUpgradeLevel <= 60)
+        {
+            moonIndex = 3;
+            image.sprite = sprites[moonIndex];
+        }
+        else if (MoonUpgradePanel.moonUpgradeLevel >= 61)
+        {
+            moonIndex = 4;
+            image.sprite = sprites[moonIndex];
+        }
+    }
+    public void MoonUpgradeImage()
+    {
+        switch (MoonUpgradePanel.moonUpgradeLevel)
+        {
+            case 5:
+                if (moonIndex == 0)
+                {
+                    image.sprite = sprites[moonIndex];
+                    moonIndex++;
+                }
+                break;
+            case 21:
+                if (moonIndex == 1)
+                {
+                    image.sprite = sprites[moonIndex];
+                    moonIndex++;
+                }
+                break;
+            case 41:
+                if (moonIndex == 2)
+                {
+                    image.sprite = sprites[moonIndex];
+                    moonIndex++;
+                }
+                break;
+            case 61:
+                if (moonIndex == 3)
+                {
+                    image.sprite = sprites[moonIndex];
+                    moonIndex++;
+                }
+                break;
+        }
+        if (sprites.Length == moonIndex)
+        {
+            moonIndex = 0;
+        }
+    }
 }
