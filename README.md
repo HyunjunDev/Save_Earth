@@ -1,4 +1,6 @@
-### Save Earth
+# Save Earth
+* * *
+
 1학년 2학기 개인 프로젝트
 게임 제목: Save Earth
 게임 장르: 모바일 클리커
