@@ -11,7 +11,7 @@
 [![Video Label](https://user-images.githubusercontent.com/101493216/214756327-e756c30b-b29b-4fb7-ba71-0c4f1a53cb73.png)](https://www.youtube.com/watch?v=E61_uPV81kM)
 
 <p align="center">
-<img width="33%" src="https://user-images.githubusercontent.com/101493216/211142008-a913f7d2-026d-4646-913c-76ae7e58cf92.png"/>
-<img width="33%" src="https://user-images.githubusercontent.com/101493216/211142411-11bd01e3-8182-45b3-82f2-bcc34b98bbae.png"/>
-<img width="33%" src="https://user-images.githubusercontent.com/101493216/211142268-d2499f52-57c0-465b-8810-15a5e866d542.png"/>
+<img width="25%" src="https://user-images.githubusercontent.com/101493216/211142008-a913f7d2-026d-4646-913c-76ae7e58cf92.png"/>
+<img width="25%" src="https://user-images.githubusercontent.com/101493216/211142411-11bd01e3-8182-45b3-82f2-bcc34b98bbae.png"/>
+<img width="25%" src="https://user-images.githubusercontent.com/101493216/211142268-d2499f52-57c0-465b-8810-15a5e866d542.png"/>
 <figcaption align="center">
