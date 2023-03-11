@@ -1,20 +1,25 @@
-# Save Earth
-1학년 2학기 개인 프로젝트  
+# 🌎Save Earth🌎
+> 1학년 2학기 때 직접 기획하고 제작한 안드로이드 모바일 게임입니다.
 
-게임 제목: Save Earth  
+---
 
-게임 장르: 모바일 클리커  
+## 🍰 서론
 
-게임 설명: 지구를 지키기 위해 다가오는 운석을 부숴야한다. 클릭하여 돈을 벌고, 로켓을 업그레이드 하여 지구를 지키자!  
-  
-**다운로드**
-+ https://drive.google.com/file/d/1sCQAVoSBiGFUF1CiNvJpBoDj62cqsQbG/view?usp=sharing  
-</br>
+- *게임 장르* : 2D 퍼즐
+- *플랫폼* : 안드로이드 모바일
+- *제작 인원* : 1 인 (개인 프로젝트)
+- *사용 엔진과 언어* : Unity, C#
 
-[![유튜브영상](https://user-images.githubusercontent.com/101493216/214756327-e756c30b-b29b-4fb7-ba71-0c4f1a53cb73.png)](https://www.youtube.com/watch?v=E61_uPV81kM)
- 
-<p align="center">
-<img width="28%" src="https://user-images.githubusercontent.com/101493216/211142008-a913f7d2-026d-4646-913c-76ae7e58cf92.png"/>
-<img width="28%" src="https://user-images.githubusercontent.com/101493216/211142411-11bd01e3-8182-45b3-82f2-bcc34b98bbae.png"/>
-<img width="28%" src="https://user-images.githubusercontent.com/101493216/211142268-d2499f52-57c0-465b-8810-15a5e866d542.png"/>
-<figcaption align="center">
+## 🍰 플레이 영상 보러 가기! (유튜브)
+
++ <https://www.youtube.com/watch?v=E61_uPV81kM>
+
+## 🍰 다운로드 (구글 드라이브)
+
++ <https://drive.google.com/file/d/1sCQAVoSBiGFUF1CiNvJpBoDj62cqsQbG/view?usp=sharing>
+
+## 🍰 포트폴리오
+
+
+
+---
